@@ -82,4 +82,59 @@ foreach ($mas as $i)
 $res = sqrt($sum);
 echo "$res\n";
 
+// Функции округления
+$sqrt = sqrt(379);
+$sqrtInt = round($sqrt); // округляем до целых
+echo "$sqrtInt\n";
+$sqrtFloat1 = round($sqrt,1); // округляем до делятых
+echo "$sqrtFloat1\n";
+$sqrtFloat2 = round($sqrt, 2); // округляем до сотых
+echo "$sqrtFloat2\n";
+
+$sqrt = sqrt(587);
+$mas1 = [
+    'floor' => floor($sqrt), // округляем в меньшую сторону
+    'ceil' => ceil($sqrt) // округляем в большкю сторону
+];
+echo $mas1['floor'], "\n", $mas1['ceil'], "\n";
+
+// Работа с min и max
+$masMin = [4, -2, 5, 19, -130, 0, 10];
+$min = min($masMin); // Находим минимальное число из массива
+$max = max($masMin); // Находим максимальное число из массива
+echo "Минимальное значение: $min\n и максимальное значение: $max\n";
+
+// Работа с рандомаом
+$rand = rand(0, 100); // создаётся случайное число
+echo "Случайное число от 0 до 100: $rand\n";
+
+// заполняю массив 10-ю разными числами
+$masRand = [];
+for ($i = 0; $i < 10; $i++)
+{
+    $masRand[$i] = rand(0,200);
+}
+var_dump($masRand);
+echo "\n";
+
+// Работа с модулем
+$a = 9;
+$b = 12;
+$module = abs($a-$b); // находим модуль разности
+echo "Модуль разности $a и $b равен $module\n";
+
+// Сделать из массива где есть отридцательные чила в массив толькок с положительными
+$masNegNum = [1, 2, -1, -2, 3, -3];
+$masPosNum = [ ];
+$i = 0;
+foreach ($masNegNum as $value)
+{
+    $masPosNum[$i] = abs($value); // Берём модуль числа и сохроняем его в новый массив
+    $i++;
+}
+var_dump($masPosNum);
+echo "\n";
+
+
+
 
