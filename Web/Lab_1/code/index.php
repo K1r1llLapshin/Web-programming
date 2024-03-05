@@ -167,4 +167,73 @@ foreach ($mas as $ma)
 }
 echo "Перыве $count элемента(ов) надо, чтобы сумма была больше 10\n";
 
+/** 7. Функции */
+// Функция, которая печатает текс и вохвращает число
+function  printStringReturnNumber()
+{
+    echo "С 8 мартом!!!\n";
+    return 8;
+}
+$my_num = printStringReturnNumber();
+echo "$my_num\n";
 
+// Функция, которая добовляет '!' к строке
+function increaseEnthusiasm($string)
+{
+    return $string .= '!';
+}
+$string = 'С 8 мартом';
+$string = increaseEnthusiasm($string);
+echo "$string\n";
+
+//  Функция, которая утраивает строку
+function  repeatThreeTimes($string)
+{
+    return $string.$string.$string;
+}
+$string1 = 'Счастливого праздника';
+$string1 =  repeatThreeTimes($string1);
+echo "$string1\n";
+
+echo increaseEnthusiasm(repeatThreeTimes(increaseEnthusiasm('Привт мир'))), "\n"; // используем 2 функции сразу
+
+// Функция, которая печатает определённое количесиво первых символов в тексте
+function cup($string, $int = 10)
+{
+    return $string = substr($string, 0, $int*2); // делаю уножение на 2 т.к без этого выводит половину
+                                                             //  от количества которое надо
+}
+
+echo cup("КакойХорошийДень"), "\n";
+
+// Работаем с рекурисией
+function  echoArray($mas, $i = 0) // функция рекурсивно выводит массив
+{
+    if ($i <sizeof($mas)) // если элемент меньше размера массива
+    {
+        echo "$mas[$i] "; // то выводим значение под этим индексом
+        echoArray($mas, $i+1); // вызывем рекурсивно функциию, но увеличив значение $i
+    }
+}
+$masRec = [10, 1, 2, 4, 5, 11, 123, 234];
+echoArray($masRec);
+echo "\n";
+
+//Функция складывает цифры числа. Если сумма получилась более 9-ти, опять складывает его цифры. И так, пока сумма не
+// станет однозначным числом (9 и менее)
+function sumNum($num) {
+    $sum = 0;
+
+    while ($num > 0 || $sum > 9) {
+        if ($num == 0) {
+            $num = $sum;
+            $sum = 0;
+        }
+
+        $sum += $num % 10;
+        $number = (int)($num/ 10);
+    }
+
+    return $sum;
+}
+echo sumNum(12345), "\n";
