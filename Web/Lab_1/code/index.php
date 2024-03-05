@@ -312,3 +312,46 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo sizeof($arr), "\n"; // 1)
 echo "$arr[4]\n";// 2)
 
+/** 9. Конструкция if else */
+// Функция, которая выводит "true" ели сумма 2-х чисел больше 10
+function more10($num1, $num2)
+{
+    if ($num1+$num2 > 10)
+        return True;
+    else
+        return False;
+}
+echo more10(2, 2), "\n";
+
+// Функция, которая вернёт "true" если числа равны
+function equal($num1, $num2)
+{
+    if ($num1 == $num2)
+        return True;
+    else
+        return False;
+}
+echo equal(2, 2), "\n";
+
+// перепишем в сокращенной форме
+$test = 0;
+//if ($test == 0) {
+//		echo 'верно';
+//	}
+if ($test == 0) echo 'верно';
+echo "\n";
+
+//прверям входит ли число в диапозон и смотрим какое это число двузначно или однозначно
+$age = 47;
+if ($age > 10 && $age < 99)
+{
+    if ($age%10+($age%10)%10 > 9) echo "Данное чило двузначна\n";
+    else echo "Данное чило однозначна\n";
+}
+else echo "Данное чило не вродит в диапозон [10,99]\n";
+
+// Проверка в массиве 3 элемента и если так то выводим их сумму
+$arr = [32, 23, 343];
+if (sizeof($arr) == 3) echo array_sum($arr), "\n";
+else echo  "В массиве ", sizeof($arr), " элемента(ов)\n";
+
