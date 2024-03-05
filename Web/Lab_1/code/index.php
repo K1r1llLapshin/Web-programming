@@ -221,19 +221,94 @@ echo "\n";
 
 //Функция складывает цифры числа. Если сумма получилась более 9-ти, опять складывает его цифры. И так, пока сумма не
 // станет однозначным числом (9 и менее)
-function sumNum($num) {
+function sumNum($num)
+{
     $sum = 0;
-
-    while ($num > 0 || $sum > 9) {
-        if ($num == 0) {
-            $num = $sum;
-            $sum = 0;
-        }
-
+    while ($num > 0) {
         $sum += $num % 10;
-        $number = (int)($num/ 10);
+        $num = floor($num / 10);
     }
-
+    if ($sum > 9) {
+        return sumNum($sum);
+    }
     return $sum;
 }
-echo sumNum(12345), "\n";
+echo sumNum(12), "\n";
+
+/** 8. Массивы */
+// функция, котороя заполняет массив (колличество элементов сами определяем) "x",
+// в каждом последующем элементе на 1 "х" больше
+function musX($count)
+{
+ $res = ['x'];
+ for ($i = 1; $i < $count; $i++)
+ {
+     $res[$i] = $res[$i-1].'x';
+ }
+ return $res;
+}
+echoArray(musX(5));
+echo "\n";
+
+//функция, которая заполняет массив заданными значениями
+function  arrayFill($syb, $count)
+{
+    $res = [];
+    for ($i = 0; $i < $count; $i++)
+    {
+        $res[$i] = $syb;
+    }
+    return $res;
+}
+
+echoArray(arrayFill('a', 8));
+echo "\n";
+
+//Функция, которая считает сумму элементов 2-мерного массива
+function SumArrayElement($array)
+{
+    $sum = 0;
+    for ($i = 0; $i < count($array); $i++)
+    {
+        for ($j = 0; $j < count($array[$i]); $j++)
+        {
+            $sum += $array[$i][$j];
+        }
+    }
+    return $sum;
+}
+
+$Array2d = [[1,2,3],[4,5],[6]];
+echo SumArrayElement($Array2d), "\n";
+
+// Создадим с помощью 2 цикла  2-мерный массив
+$num = 1;
+for ($i = 0; $i < 3; $i++)
+{
+    for ($j = 0; $j < 3; $j++)
+    {
+        $array2D[$i][$j] = $num;
+        $num++;
+    }
+}
+var_export($array2D);
+echo "\n";
+
+// Операция над элементами массива
+$ar = [2, 5, 3, 9];
+$result = ($ar[0]*$ar[1])+($ar[2]*$ar[3]);
+echo "$result\n";
+
+// работаем с ключами массива (ФИО)
+$user = ['name' => 'Kirill', 'surname' => 'Lapshin', 'patronymic' => 'Danilovuch'];
+echo "$user[surname] $user[name] $user[patronymic]\n";
+
+// работаем с ключами массива (дата)
+$data = ['year' => 2024, 'month' => 3, 'day' => 05];
+echo "$data[year] $data[month] $data[day]\n";
+
+//Дан массив
+$arr = ['a', 'b', 'c', 'd', 'e'];
+echo sizeof($arr), "\n"; // 1)
+echo "$arr[4]\n";// 2)
+
