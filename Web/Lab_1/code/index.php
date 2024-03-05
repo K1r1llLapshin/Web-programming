@@ -355,3 +355,11 @@ $arr = [32, 23, 343];
 if (sizeof($arr) == 3) echo array_sum($arr), "\n";
 else echo  "В массиве ", sizeof($arr), " элемента(ов)\n";
 
+/** 10. Циклы */
+// Рисуем пирамиду
+$symb = ' ';
+for($i = 1; $i < 21; $i++)
+{
+    $symb .= 'x';
+    echo $symb, "\n";
+}
