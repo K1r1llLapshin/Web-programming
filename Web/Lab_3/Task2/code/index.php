@@ -13,7 +13,7 @@
     <div>
         <form action="step1.php" method="post">
             <textarea name="textStep1" rows="10" cols="30" ></textarea> <br>
-            <input type="submit" name="buttonStep1" value="Start"> <br>
+            <input type="submit" value="Start step 1"> <br>
         </form>
         <?php
         echo "Количество символов: {$_COOKIE["CountSymbols"]}<br>";
@@ -32,7 +32,24 @@
             <input type="text" name="Name"> <br>
             <label for="Age"> Your age: </label>
             <input type="text" name="Age"> <br>
-            <input type="submit" name="buttonStep2" value="Start"> <br>
+            <input type="submit" value="Start step 2"> <br>
+        </form>
+    </div>
+    <br>
+    STEP 3. <br>
+    <div>
+        <form action="step3.php" method="post">
+            <label for="LastName"> Your LastName: </label>
+            <input type="text" name="LastName"> <br>
+            <label for="Name"> Your Name: </label>
+            <input type="text" name="Name"> <br>
+            <label for="Age"> Your age: </label>
+            <input type="text" name="Age"> <br>
+            <label for="Salary"> Your salary: </label>
+            <input type="text" name="Salary"> <br>
+            <label for="Pets"> Your рets: </label>
+            <input type="text" name="Pets"> <br>
+            <input type="submit" value="Start step 3"> <br>
         </form>
     </div>
 </body>
