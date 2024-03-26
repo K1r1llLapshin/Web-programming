@@ -9,7 +9,7 @@ echo "Найденные строки: ";
 var_dump($result);
 
 // b.
-$strB = '10 2 3';
+$strB = '1 2 3';
 $regexpB = '/[0-9]+/';
 function cube($c) {
     return $c[0] **3;
