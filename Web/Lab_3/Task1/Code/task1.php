@@ -15,5 +15,5 @@ function cube($c) {
     return $c[0] **3;
 }
 $resultB = preg_replace_callback($regexpB,"cube", $strB);
-echo $resultB;
+echo $resultB, "\n";
 
