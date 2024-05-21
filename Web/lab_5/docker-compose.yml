@@ -9,7 +9,18 @@ services:
       - ./site.conf:/etc/nginx/conf.d/site.conf
     links:
       - php
+  db:
+    image: mysql:8.0
+    ports:
+      - '6603:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: helloworld
+
   php:
-    image: php:8-fpm
+    build: .
     volumes:
       - ./code:/code
+    depends_on:
+      - db
+    links:
+      - db
